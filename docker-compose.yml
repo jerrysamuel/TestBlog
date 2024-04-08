@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/blog
+      - ./db:/blog/db
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=1
+      - SECRET_KEY='django-insecure-uk@b%l8510lhzaws&+^@suvyiu-f9=$y=t@m(mn9y3zqp$7)m9'
+      - DJANGO_SETTINGS_MODULE=blog.settings
+
+    
+    
+      
