@@ -44,6 +44,7 @@ class Account(AbstractBaseUser, PermissionsMixin):
     is_customer = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'email'
+    EMAIL_FIELD = 'email'
     REQUIRED_FIELDS = ['username',]
 
     objects = MyAccountManager()

@@ -25,7 +25,7 @@ class SigninForm(AuthenticationForm):
 class SignupForm(UserCreationForm):
     class Meta:
         model = Account
-        fields = ('username', 'email','role', )
+        fields = ('username', 'email', )
 
     def __init__(self, *args, **kwargs):
         super(SignupForm, self).__init__(*args, **kwargs)
@@ -73,7 +73,7 @@ class UserPasswordChangeForm(PasswordChangeForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('user', 'role', 'avatar',)
+        exclude = ('user', 'avatar',)
 
     def __init__(self, *args, **kwargs):
         super(ProfileForm, self).__init__(*args, **kwargs)

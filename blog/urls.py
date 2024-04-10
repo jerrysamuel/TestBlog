@@ -23,6 +23,7 @@ from content.views import PrivateGraphQlView
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path("graphql", csrf_exempt(GraphQLView.as_view(graphiql=True))),
-    path('', include('content.urls'))
+    path('', include('content.urls')),
+    path('users/graphql/', include('users.urls')),
 ]
 
